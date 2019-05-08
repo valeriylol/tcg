@@ -3,8 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ProductoType extends AbstractType
 {
@@ -17,9 +19,10 @@ class ProductoType extends AbstractType
             ->add('descripcion')
             ->add('precioReal')
             ->add('precioEstimado')
-            ->add('foto')
+            ->add('foto', FileType::class, array('label' =>"Foto .jpg"))
             ->add('link')
-            ->add('usuarioId');
+            ->add('usuarioId')
+            ->add('save', SubmitType::class, ['label' => 'Enviar']);
     }/**
      * {@inheritdoc}
      */

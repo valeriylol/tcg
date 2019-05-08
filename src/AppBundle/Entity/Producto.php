@@ -52,7 +52,7 @@ class Producto
     /**
      * @var string
      *
-     * @ORM\Column(name="Foto", type="blob")
+     * @ORM\Column(name="Foto", type="string")
      */
     private $foto;
 
